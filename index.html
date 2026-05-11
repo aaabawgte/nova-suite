@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BIG BANG kalkulator jamstva za izračun cijene proizvoda s jamstvom i mjesečnih rata." />
+  <title>BIG BANG • Kalkulator jamstva</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+</head>
+<body>
+  <div id="loader" aria-hidden="true">
+    <div class="loader-background"></div>
+    <img src="assets/logo.png" alt="BIG BANG logo" class="loader-logo" />
+  </div>
+  <main id="app" class="app-hidden">
+    <section class="hero">
+      <img src="assets/logo.png" alt="BIG BANG logo" class="logo" />
+      <h1>Kalkulator jamstva</h1>
+      <p>Unesi cijenu proizvoda, odaberi grupu proizvoda i vrstu jamstva.</p>
+    </section>
+
+    <section class="card" aria-label="Kalkulator jamstva">
+      <div class="grid">
+        <div class="form-field">
+          <label for="price">Cijena uređaja s PDV-om (€)</label>
+          <input id="price" type="text" inputmode="decimal" autocomplete="off" placeholder="npr. 419,00" />
+        </div>
+
+        <div class="form-field">
+          <label for="group">Grupa proizvoda</label>
+          <select id="group">
+            <option value="">Odaberi grupu</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="warranty">Jamstvo</label>
+          <select id="warranty" disabled>
+            <option value="">Prvo odaberi grupu</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="calculateBtn" type="button">Izračunaj</button>
+        <button id="resetBtn" class="secondary" type="button">Očisti</button>
+      </div>
+
+      <p id="error" class="error hidden" role="alert"></p>
+
+      <div id="results" class="hidden">
+        <div class="results" aria-label="Rezultati izračuna">
+          <div class="result-box">
+            <span>Cijena bez jamstva</span>
+            <strong id="basePrice">0,00 €</strong>
+          </div>
+
+          <div class="result-box">
+            <span>Cijena jamstva</span>
+            <strong id="warrantyPrice">0,00 €</strong>
+          </div>
+
+          <div class="result-box highlight">
+            <span>Cijena s jamstvom</span>
+            <strong id="totalPrice">0,00 €</strong>
+          </div>
+        </div>
+
+        <section class="rate-section" aria-label="Izračun mjesečne rate">
+          <div class="section-heading">
+            <h2>Izračunaj mjesečnu ratu</h2>
+            <p>Unesi broj rata i usporedi mjesečnu ratu sa i bez jamstva.</p>
+          </div>
+
+          <div class="grid rate-grid">
+            <div class="form-field">
+              <label for="installments">Broj rata</label>
+              <input id="installments" type="number" min="1" step="1" inputmode="numeric" placeholder="npr. 12" />
+            </div>
+
+            <div class="form-field button-field">
+              <button id="rateBtn" type="button">Izračunaj ratu</button>
+            </div>
+          </div>
+
+          <p id="rateError" class="error hidden" role="alert"></p>
+
+          <div id="rateResults" class="results hidden" aria-label="Rezultati mjesečnih rata">
+            <div class="result-box">
+              <span>Rata bez jamstva</span>
+              <strong id="monthlyBase">0,00 €</strong>
+            </div>
+
+            <div class="result-box">
+              <span>Rata s jamstvom</span>
+              <strong id="monthlyTotal">0,00 €</strong>
+            </div>
+
+            <div class="result-box highlight">
+              <span>Razlika u rati</span>
+              <strong id="monthlyDiff">0,00 €</strong>
+            </div>
+          </div>
+        </section>
+
+        <div class="offer-actions">
+          <button id="pdfBtn" class="pdf-button" type="button">Izradi PDF ponudu</button>
+        </div>
+      </div>
+
+      <p class="small-note">BIG BANG • Automatski izračun cijene jamstva i mjesečnih rata.</p>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
