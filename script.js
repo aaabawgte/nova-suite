@@ -54,6 +54,7 @@ const totalPriceEl = document.querySelector("#totalPrice");
 const monthlyBaseEl = document.querySelector("#monthlyBase");
 const monthlyTotalEl = document.querySelector("#monthlyTotal");
 const monthlyDiffEl = document.querySelector("#monthlyDiff");
+const installmentValueEl = document.querySelector("#installmentValue");
 const loaderEl = document.querySelector("#loader");
 const appEl = document.querySelector("#app");
 
@@ -74,20 +75,34 @@ function formatEuro(value) {
   }).format(value);
 }
 
+function updateInstallmentDisplay() {
+  if (!installmentsInput || !installmentValueEl) {
+    return;
+  }
+
+  installmentValueEl.textContent = installmentsInput.value;
+
+  const min = Number(installmentsInput.min || 1);
+  const max = Number(installmentsInput.max || 36);
+  const value = Number(installmentsInput.value);
+  const progress = ((value - min) / (max - min)) * 100;
+
+  installmentsInput.style.setProperty("--slider-progress", `${progress}%`);
+}
+
 function animateEuro(element, endValue) {
   if (prefersReducedMotion()) {
     element.textContent = formatEuro(endValue);
     return;
   }
 
-  const startValue = 0;
   const startTime = performance.now();
 
   function updateNumber(currentTime) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / animationDuration, 1);
     const easedProgress = 1 - Math.pow(1 - progress, 3);
-    const currentValue = startValue + (endValue - startValue) * easedProgress;
+    const currentValue = endValue * easedProgress;
 
     element.textContent = formatEuro(currentValue);
 
@@ -321,6 +336,7 @@ function calculateInstallments() {
   }
 
   const installments = Number(installmentsInput.value);
+  updateInstallmentDisplay();
 
   if (!Number.isInteger(installments) || installments <= 0) {
     showError(rateErrorEl, "Unesi ispravan broj rata veći od 0.");
@@ -333,6 +349,7 @@ function calculateInstallments() {
   const monthlyBase = latestCalculation.basePrice / installments;
   const monthlyTotal = latestCalculation.totalPrice / installments;
   const monthlyDifference = monthlyTotal - monthlyBase;
+
   latestInstallmentCalculation = {
     installments,
     monthlyBase,
@@ -354,7 +371,8 @@ function calculateInstallments() {
 function resetCalculator() {
   priceInput.value = "";
   groupSelect.value = "";
-  installmentsInput.value = "";
+  installmentsInput.value = "12";
+  updateInstallmentDisplay();
   latestCalculation = null;
   latestInstallmentCalculation = null;
 
@@ -415,6 +433,7 @@ async function ensurePdfDependencies() {
     () => Boolean(window.html2canvas)
   );
 }
+
 async function generatePdfOffer() {
   if (!latestCalculation) {
     showError(errorEl, "Prvo izračunaj cijenu s jamstvom prije izrade PDF ponude.");
@@ -706,6 +725,15 @@ async function generatePdfOffer() {
   }
 }
 
+function handleInstallmentSliderInput() {
+  updateInstallmentDisplay();
+  clearInvalidState(installmentsInput);
+
+  if (latestCalculation && !rateResultsEl.classList.contains("hidden")) {
+    calculateInstallments();
+  }
+}
+
 function handleEnterKey(event) {
   if (event.key === "Enter") {
     calculateWarranty();
@@ -716,6 +744,7 @@ function initializeCalculator() {
   runIntroLoader();
   populateGroups();
   populateWarranties("");
+  updateInstallmentDisplay();
 
   groupSelect.addEventListener("change", (event) => {
     clearInvalidState(groupSelect);
@@ -724,12 +753,17 @@ function initializeCalculator() {
   });
 
   warrantySelect.addEventListener("change", () => clearInvalidState(warrantySelect));
-  installmentsInput.addEventListener("input", () => clearInvalidState(installmentsInput));
+  installmentsInput.addEventListener("input", handleInstallmentSliderInput);
   priceInput.addEventListener("input", () => clearInvalidState(priceInput));
 
   priceInput.addEventListener("blur", formatPriceInput);
   priceInput.addEventListener("keydown", handleEnterKey);
   warrantySelect.addEventListener("keydown", handleEnterKey);
+  installmentsInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      calculateInstallments();
+    }
+  });
 
   calculateBtn.addEventListener("click", calculateWarranty);
   rateBtn.addEventListener("click", calculateInstallments);

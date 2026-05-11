@@ -6,6 +6,7 @@
   <meta name="description" content="BIG BANG kalkulator jamstva za izračun cijene proizvoda s jamstvom i mjesečnih rata." />
   <title>BIG BANG • Kalkulator jamstva</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 </head>
 <body>
@@ -13,14 +14,15 @@
     <div class="loader-background"></div>
     <img src="assets/logo.png" alt="BIG BANG logo" class="loader-logo" />
   </div>
-  <main id="app" class="app-hidden">
+
+  <main id="app" class="app-hidden app-shell">
     <section class="hero">
       <img src="assets/logo.png" alt="BIG BANG logo" class="logo" />
       <h1>Kalkulator jamstva</h1>
       <p>Unesi cijenu proizvoda, odaberi grupu proizvoda i vrstu jamstva.</p>
     </section>
 
-    <section class="card" aria-label="Kalkulator jamstva">
+    <section class="card calculator-card" aria-label="Kalkulator jamstva">
       <div class="grid">
         <div class="form-field">
           <label for="price">Cijena uređaja s PDV-om (€)</label>
@@ -43,6 +45,7 @@
       </div>
 
       <div class="actions">
+        <div class="actions-glow"></div>
         <button id="calculateBtn" type="button">Izračunaj</button>
         <button id="resetBtn" class="secondary" type="button">Očisti</button>
       </div>
@@ -70,18 +73,29 @@
         <section class="rate-section" aria-label="Izračun mjesečne rate">
           <div class="section-heading">
             <h2>Izračunaj mjesečnu ratu</h2>
-            <p>Unesi broj rata i usporedi mjesečnu ratu sa i bez jamstva.</p>
+            <p>Odaberi broj rata i usporedi mjesečnu ratu sa i bez jamstva.</p>
           </div>
 
-          <div class="grid rate-grid">
-            <div class="form-field">
+          <div class="rate-control">
+            <div class="rate-control-header">
               <label for="installments">Broj rata</label>
-              <input id="installments" type="number" min="1" step="1" inputmode="numeric" placeholder="npr. 12" />
+              <div class="installment-value" aria-live="polite">
+                <strong id="installmentValue">12</strong>
+                <span>rata</span>
+              </div>
             </div>
 
-            <div class="form-field button-field">
-              <button id="rateBtn" type="button">Izračunaj ratu</button>
+            <div class="slider-wrap">
+              <input id="installments" class="installment-slider" type="range" min="1" max="36" step="1" value="12" />
+              <div class="slider-labels" aria-hidden="true">
+                <span>1</span>
+                <span>12</span>
+                <span>24</span>
+                <span>36</span>
+              </div>
             </div>
+
+            <button id="rateBtn" class="rate-button" type="button">Izračunaj ratu</button>
           </div>
 
           <p id="rateError" class="error hidden" role="alert"></p>
@@ -109,7 +123,10 @@
         </div>
       </div>
 
-      <p class="small-note">BIG BANG • BETA VERZIJA</p>
+      <div class="app-footer">
+        <p class="small-note">BIG BANG • Bruno Ježek.</p>
+        <span class="version-badge">v1.0</span>
+      </div>
     </section>
   </main>
 
