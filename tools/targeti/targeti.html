@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Suite • Kalkulator targeta</title>
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-wordmark">Nova Suite</div>
+  </div>
+
+  <main id="app" class="app-hidden">
+    <div class="app-shell">
+      <header class="hero">
+        <a href="../pocetna/pocetna.html" class="brand-mark">Nova Suite</a>
+
+        <h1>Kalkulator targeta</h1>
+        <p>
+          Unesi mjesečne targete i broj radnih dana za izračun dnevnih i tjednih ciljeva.
+        </p>
+      </header>
+
+      <section class="card calculator-card">
+        <div class="grid target-grid">
+          <div class="form-field">
+            <label for="salesTarget">Promet (€)</label>
+            <input
+              type="text"
+              id="salesTarget"
+              placeholder="npr. 80000"
+              inputmode="decimal"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="sdTarget">SD+ (€)</label>
+            <input
+              type="text"
+              id="sdTarget"
+              placeholder="npr. 12000"
+              inputmode="decimal"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="crossTarget">Cross Sell (€)</label>
+            <input
+              type="text"
+              id="crossTarget"
+              placeholder="npr. 3500"
+              inputmode="decimal"
+            />
+          </div>
+
+          <div class="form-field compact-field">
+            <label for="workingDays">Radni dani</label>
+            <input
+              type="number"
+              id="workingDays"
+              min="1"
+              placeholder="22"
+            />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="calculateBtn" class="primary-btn">
+            Izračunaj
+          </button>
+
+          <button id="resetBtn" class="secondary-btn">
+            Očisti
+          </button>
+        </div>
+
+        <div id="error" class="error-message hidden"></div>
+
+        <section id="results" class="hidden">
+          <div class="results target-results">
+            <div class="result-box">
+              <span>Promet dnevno</span>
+              <strong id="salesDaily">0,00 €</strong>
+            </div>
+
+            <div class="result-box">
+              <span>SD+ dnevno</span>
+              <strong id="sdDaily">0,00 €</strong>
+            </div>
+
+            <div class="result-box highlight">
+              <span>Cross dnevno</span>
+              <strong id="crossDaily">0,00 €</strong>
+            </div>
+          </div>
+
+          <div class="results target-results weekly-results">
+            <div class="result-box">
+              <span>Promet tjedno</span>
+              <strong id="salesWeekly">0,00 €</strong>
+            </div>
+
+            <div class="result-box">
+              <span>SD+ tjedno</span>
+              <strong id="sdWeekly">0,00 €</strong>
+            </div>
+
+            <div class="result-box highlight">
+              <span>Cross tjedno</span>
+              <strong id="crossWeekly">0,00 €</strong>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        Nova Suite • Sales Tools
+      </footer>
+    </div>
+  </main>
+
+  <script src="targeti.js"></script>
+</body>
+</html>

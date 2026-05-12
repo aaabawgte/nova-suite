@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Nova Suite">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0050a0">
+    <title>Nova Suite • Servisne procedure</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div id="loader">
+        <div class="loader-wordmark">Nova Suite</div>
+    </div>
+
+    <main id="app" class="app-hidden">
+        <div class="app-shell">
+            <header class="hero">
+                <a href="../pocetna/pocetna.html" class="brand-mark">Nova Suite</a>
+
+                <h1>Servisne procedure</h1>
+                <p>Pretražite servisne informacije po brandu.</p>
+            </header>
+
+            <section class="card search-card">
+                <div class="search-box">
+                    <div class="search-input-wrapper">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Upišite naziv branda (npr. Samsung, Bosch, LG...)"
+                            autocomplete="off"
+                        >
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </div>
+
+                <div id="results" class="results"></div>
+            </section>
+
+            <footer class="app-footer">
+                Nova Suite • Servisne procedure
+            </footer>
+        </div>
+    </main>
+
+    <script src="servisne_procedure.js"></script>
+
+    <div id="emailWidget">
+        <button id="emailBtn" onclick="toggleEmailForm()">
+            ✉️ Pošalji poruku
+        </button>
+        
+        <div id="emailFormContainer" style="display: none;">
+            <div class="email-form-box">
+                <div class="email-form-header">
+                    <h3>✉️ Pošalji nam poruku</h3>
+                    <button class="close-btn" onclick="toggleEmailForm()">✕</button>
+                </div>
+                
+                <div id="formContent">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- OVDJE STAVI SVOJ WEB3FORMS ACCESS KEY -->
+                        <input type="hidden" name="access_key" value="362495a7-8e2e-4ca7-9362-667d65a479ca">
+                        <input type="hidden" name="subject" value="Nova poruka iz Nova Suite servisnih procedura">
+                        <input type="hidden" name="from_name" value="Nova Suite">
+                        <input type="hidden" name="email" value="internal@servisne-procedure.local">
+                        
+                        <div class="form-group">
+                            <label>Tvoje ime</label>
+                            <input type="text" name="name" placeholder="npr. Marko">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Naslov</label>
+                            <input type="text" name="custom_subject" placeholder="npr. Ubaciti Philips">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Poruka *</label>
+                            <textarea name="message" placeholder="Napiši svoju poruku ovdje..." rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submitBtn">
+                            <span id="btnText">📤 Pošalji poruku</span>
+                            <span id="btnLoader" style="display: none;">⏳ Šaljem...</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div id="successMessage" style="display: none;">
+                    <div class="success-content">
+                        <div class="success-icon">✅</div>
+                        <h3>Poruka poslana!</h3>
+                        <button onclick="resetForm()" class="new-message-btn">
+                            ✉️ Pošalji novu poruku
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EMAIL WIDGET END -->
+
+</body>
+</html>

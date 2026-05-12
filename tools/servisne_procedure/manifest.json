@@ -1,0 +1,25 @@
+{
+  "name": "Nova Suite • Servisne Procedure",
+  "short_name": "Servisi",
+  "description": "Nova Suite alat za pretragu servisnih informacija po brandu",
+  "start_url": "./servisne_procedure.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e8f2ff",
+  "theme_color": "#0050a0",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "../../assets/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../../assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

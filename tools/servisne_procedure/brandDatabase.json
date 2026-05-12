@@ -1,0 +1,1506 @@
+[
+  {
+    "brand": "Samsung",
+    "servisi": [
+      {
+        "service": "Smart Smart servis",
+        "address": "Mažuranićevo šetalište 40, 21000 Split",
+        "kontakt": "info@smartservice.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Smart Smart servis",
+        "address": "Vice Vukova 6, Arena Centar, Samsung Experience Store, 10000 Zagreb",
+        "kontakt": "info@smartservice.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Smart Smart centralni servis",
+        "address": "Jaruščica 4, Arena Park, 10000 Zagreb",
+        "kontakt": "info@smartservice.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Mobidom servis",
+        "address": "Supilova ulica 7, 10000 Zagreb",
+        "kontakt": "info@mobidom.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Philips MKA i osobna njega",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Neki artikli se mijenjaju 1za1, ostalo se šalje u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Neki artikli se mijenjaju 1za1, ostalo se šalje u servis"
+      }
+    ],
+    "documents": [
+      {
+        "name": "DirectExchange",
+        "url": "document/Philips_direct_exchange.xlsx"
+      },
+      {
+        "name": "Versuni_DirectExchange",
+        "url": "document/Philips_direct_exchange_Versuni.xlsx"
+      },
+      {
+        "name": "Obrazac direktne zamjene",
+        "url": "document/Philips_obrazac_direktne_zamjene.xlsx"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Gorenje/Hisense VKA - MKA",
+    "servisi": [
+      {
+        "service": "Adiumenta servis - VKA",
+        "address": "Kopilica 22, 21000 Split",
+        "kontakt": "adiumenta@gmail.com",
+        "napomena": "Za odobrenja ispuniti reklamacijski zapisnik"
+      },
+      {
+        "service": "MR Servis - MKA",
+        "address": "Dugoselska 5, 10370 Rugvica",
+        "kontakt": "info@mrservis.hr",
+        "napomena": "Za odobrenja ispuniti reklamacijski zapisnik"
+      }
+    ],
+    "documents": [
+      {
+        "name": "DirectExchange",
+        "url": "document/Gorenje_Servisni_statusi_MKA.xlsx"
+      },
+      {
+        "name": "Reklamacijski zapisnik",
+        "url": "document/Gorenje_reklamacijski_zapisnik.xlsx"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Bosch VKA - MKA",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "BT servis",
+        "address": "Gospodarska 18c, 10255 Stupnik",
+        "kontakt": "info@btservis.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.bosch-home.hr/servis/kontakt-i-informacije/online-upit-za-servisnu-intervenciju"
+  },
+  {
+    "brand": "Bosch (Robert Bosch)",
+    "service": "Robert Bosch",
+    "address": "Ulica kneza Branimira 22, 10040 Zagreb",
+    "kontakt": "reklamacije.pt@hr.bosch.com",
+    "napomena": "(klime, grijalice, bojleri, uređaji za tretman zraka i sl.)",
+    "documents": [
+      {
+        "name": "Reklamacijski zapisnik",
+        "url": "document/Robert_BOSCH_reklamacijski_zapisnik.xlsx"
+      },
+      {
+        "name": "Upute za prijavu",
+        "url": "document/Robert_BOSCH_upute.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Electrolux",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Elmaks servis",
+        "address": "Trnjanski nasip 23a, 10000 Zagreb",
+        "kontakt": "servis@servis-elmaks.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.electrolux.hr/support/book-a-service/"
+  },
+  {
+    "brand": "AEG",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Elmaks servis",
+        "address": "Trnjanski nasip 23a, 10000 Zagreb",
+        "kontakt": "servis@servis-elmaks.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.aeg.hr/support/book-a-service/"
+  },
+  {
+    "brand": "Miele",
+    "servisi": [
+      {
+        "service": "Miele Servis Split",
+        "address": "Poljička cesta 26, 21000 Split",
+        "kontakt": "info@miele.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Miele Servis Zagreb",
+        "address": "Buzinski prilaz 32, 10000 Zagreb",
+        "kontakt": "info@miele.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Candy",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Adepto usluge",
+        "address": "Ivana Gundulića 12, 10431 Strmec Samoborski",
+        "kontakt": "adepto.usluge@gmail.com",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Beko",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Adepto usluge",
+        "address": "Ivana Gundulića 12, 10431 Strmec Samoborski",
+        "kontakt": "adepto.usluge@gmail.com",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Haier",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Adepto usluge",
+        "address": "Ivana Gundulića 12, 10431 Strmec Samoborski",
+        "kontakt": "adepto.usluge@gmail.com",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Liebherr",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Liebherr",
+        "address": "10000 Zagreb",
+        "kontakt": "service.hr@liebherr.com",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.liebherr.com/hr-hr/hladnjaci-zamrzivaci/obrazac-za-kontakt-servis-3074978"
+  },
+  {
+    "brand": "Midea",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "GEMMA B&D centralni servis",
+        "address": "Prisavlje 2, 10000 Zagreb",
+        "kontakt": "servis@gemma.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.gemma.hr/prijava-kvara/"
+  },
+  {
+    "brand": "Faber",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "GEMMA B&D centralni servis",
+        "address": "Prisavlje 2, 10000 Zagreb",
+        "kontakt": "servis@gemma.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.gemma.hr/prijava-kvara/"
+  },
+  {
+    "brand": "Whirlpool",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Elmaks servis",
+        "address": "Trnjanski nasip 23a, 10000 Zagreb",
+        "kontakt": "servis@servis-elmaks.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Obrazac za skriveno oštećenje",
+        "url": "document/Whirlpool_reklamacijski_zapisnik.xls"
+      }
+    ],
+    "website": "https://www.whirlpool.hr/podrska/servisna-mreza"
+  },
+  {
+    "brand": "LG TV",
+    "servisi": [
+      {
+        "service": "Servis Kiki",
+        "address": "Draganjina 3, 21000 Split",
+        "kontakt": "josko.bitanga@st.t-com.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Supra Mea",
+        "address": "Maksimirska 129, 10000 Zagreb",
+        "kontakt": "info@supra-mea.hr",
+        "napomena": "Ako je fizičko oštećenje, ispuniti obrazac i poslati u SupraMea"
+      }
+    ],
+    "documents": [
+      {
+        "name": "LG Broken report",
+        "url": "document/LG_Broken_tv_report.pptx"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Philips TV",
+    "servisi": [
+      {
+        "service": "Servis Kiki",
+        "address": "Draganjina 3, 21000 Split",
+        "kontakt": "josko.bitanga@st.t-com.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Supra Mea",
+        "address": "Maksimirska 129, 10000 Zagreb",
+        "kontakt": "info@supra-mea.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Philips servisna procedura",
+        "url": "document/Philips_TV_Warranty_and_Service_Manual.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "LG VKA",
+    "service": "Supra Mea",
+    "address": "Maksimirska 129, 10000 Zagreb",
+    "kontakt": "info@supra-mea.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": "https://www.lg.com/hr/podrska/jamstvo-popravak/zahtjev-za-popravak-prijava"
+  },
+  {
+    "brand": "Sony TV",
+    "servisi": [
+      {
+        "service": "Servis Kiki",
+        "address": "Draganjina 3, 21000 Split",
+        "kontakt": "josko.bitanga@st.t-com.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "ATV Electronic",
+        "address": "Ulica Braće Stipčića 5A, 51000 Rijeka",
+        "kontakt": "info@atvelectronic.hr",
+        "napomena": "Nalog preko ATV Electronic obrasca"
+      }
+    ],
+    "documents": [],
+    "website": "https://atvelectronic.hr/prijevoz"
+  },
+  {
+    "brand": "TCL TV",
+    "service": "Servisni centar Hanžek",
+    "address": "Alberta Albinija 10, 10000 Zagreb",
+    "kontakt": "info@schanzek.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Hisense TV",
+    "service": "MR servis",
+    "address": "Dugoselska 5, 10372 Rugvica",
+    "kontakt": "info@mrservis.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Tesla TV",
+    "service": "Supra Mea",
+    "address": "Maksimirska 129, 10000 Zagreb",
+    "kontakt": "info@supra-mea.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Panasonic TV",
+    "service": "Mobidom servis",
+    "address": "Supilova ulica 7, 10000 Zagreb",
+    "kontakt": "info@mobidom.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Smeg",
+    "servisi": [
+      {
+        "service": "Andabaka servis",
+        "address": "Kopilica 21, 21000 Split",
+        "kontakt": "servis@andabaka.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "GEMMA B&D centralni servis",
+        "address": "Prisavlje 2, 10000 Zagreb",
+        "kontakt": "servis@gemma.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.gemma.hr/prijava-kvara/"
+  },
+  {
+    "brand": "Remington",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "DeLonghi",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Većina artiklala se šalje u servis, neki artikli se mijenjaju 1za1"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Većina artiklala se šalje u servis, neki artikli se mijenjaju 1za1"
+      }
+    ],
+    "documents": [
+      {
+        "name": "Lista aparata za zamjenu u trgovinama",
+        "url": "document/Lista aparata za zamjenu u trgovinama.xlsx"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Lavazza",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Rowenta",
+    "service": "DA Fix servis",
+    "address": "Podbrežje III. 39, 10000 Zagreb",
+    "kontakt": "info@dafixservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Krups",
+    "service": "DA Fix servis",
+    "address": "Podbrežje III. 39, 10000 Zagreb",
+    "kontakt": "info@dafixservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Ecovacs",
+    "service": "DA Fix servis",
+    "address": "Podbrežje III. 39, 10000 Zagreb",
+    "kontakt": "info@dafixservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Nespresso",
+    "service": "DA Fix servis",
+    "address": "Podbrežje III. 39, 10000 Zagreb",
+    "kontakt": "info@dafixservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Tefal",
+    "servisi": [
+      {
+        "service": "DA Fix servis",
+        "address": "Podbrežje III. 39, 10000 Zagreb",
+        "kontakt": "info@dafixservis.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Elekom servis",
+        "address": "AKlanječka Ulica 52, 10000 Zagreb",
+        "kontakt": "info@elekom-servis.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Dyson",
+    "service": "Tehno-Mag servis",
+    "address": "Slavonska avenija 53, 10000 Zagreb",
+    "kontakt": "servis@tehno-mag.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Babyliss",
+    "service": "Tehno-Mag servis",
+    "address": "Slavonska avenija 53, 10000 Zagreb",
+    "kontakt": "servis@tehno-mag.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "OralB",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Braun",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Nutribullet",
+    "service": "Singuli servis",
+    "address": "Antuna Gustava Matoša 171, 21210 Solin",
+    "kontakt": "info@singuli.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Vivax MKA",
+    "service": "MR servis",
+    "address": "Slavonska avenija 26/4, 10000 Zagreb",
+    "kontakt": "info@mrservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Tesla MKA",
+    "service": "Mobidom servis",
+    "address": "Supilova ulica 7, 10000 Zagreb",
+    "kontakt": "info@mobidom.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Panasonic MKA",
+    "service": "MR servis",
+    "address": "Slavonska avenija 26/4, 10000 Zagreb",
+    "kontakt": "info@mrservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Kenwood MKA",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Russell Hobbs",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Revlon",
+    "servisi": [
+      {
+        "service": "Singuli servis",
+        "address": "Primorska 5, 10000 Zagreb",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      },
+      {
+        "service": "Singuli servis",
+        "address": "Antuna Gustava Matoša 171, 21210 Solin",
+        "kontakt": "info@singuli.hr",
+        "napomena": "Svi artikli se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Xiaomi mobile",
+    "service": "MMM Agramservis",
+    "address": "Samoborska cesta 145, 10090 Zagreb",
+    "kontakt": "info@agramservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Xiaomi",
+    "servisi": [
+      {
+        "service": "Tech Doctor",
+        "address": "Radnička cesta 1a, 10000 Zagreb",
+        "kontakt": "partneri@techdoctor.hr",
+        "napomena": "Slanje u servis uz ispunjenu potvrdu o primitku te provjeriti po artiklu gdje pojedini ide u servis. Za uređaje koji nemaju predefiniran servis i piše PROVJERA, slajnem SN na mail (rma@mobis.hr) dobiti će se odgovor gdje ide na servis."
+      }
+    ],
+    "documents": [
+      {
+        "name": "Potvrda o primitku uređaja na servis",
+        "url": "document/Potvrda_o_primitku_uređaja_na_servis.pdf"
+      },
+      {
+        "name": "AIOT lista Xiaomi uređaja",
+        "url": "document/AIOT_list_Xiaomi_warranty.xlsx"
+      },
+      {
+        "name": "Upute",
+        "url": "document/Upute_za_slanje_uređaja_na_servis.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Xiaomi TV",
+    "service": "Supra Mea",
+    "address": "Maksimirska 129, 10000 Zagreb",
+    "kontakt": "info@supra-mea.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Hurom",
+    "service": "Enzita Life d.o.o.",
+    "address": "Avenija Dubrovnik 15 (Paviljon 14a), 10020 Zagreb",
+    "kontakt": "servis@enzita.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "EDEL+ White",
+    "service": "Albidus d.o.o.",
+    "address": "Savska cesta 106, 10000 Zagreb",
+    "kontakt": "info@albidus.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Curaprox",
+    "service": "Albidus d.o.o.",
+    "address": "Savska cesta 106, 10000 Zagreb",
+    "kontakt": "info@albidus.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Roborock",
+    "service": "Elkotex d.o.o.",
+    "address": "Magistrova 1, 1000, Ljubljana, Slovenija",
+    "kontakt": "Vedran.Crljic@elkotex.si; Mihael.Gersic@elkotex.si",
+    "napomena": "Nakon zaprimanja uređaja na servis, potrebno kontaktirati Vedran i Mihael, nakon čega se pravi prikup DPD-om.",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "iRobot Roomba",
+    "service": "Eurorobot d.o.o.",
+    "address": "Nadinska ulica 11, 10010 Veliko Polje",
+    "kontakt": "servis@eurorobot.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Elit",
+    "service": "Tehno-Mag servis",
+    "address": "Slavonska avenija 53, 10000 Zagreb",
+    "kontakt": "servis@tehno-mag.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Toshiba MKA",
+    "service": "ASBISC-CR",
+    "address": "Rakitnica 3, 10000 Zagreb",
+    "kontakt": "servis@asbis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Huawei",
+    "service": "Insignium",
+    "address": "Rudeška cesta 146, 10000 Zagreb",
+    "kontakt": "vrbani@insignum.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Apple",
+    "service": "MMM Agramservis",
+    "address": "Samoborska cesta 145, 10090 Zagreb",
+    "kontakt": "info@agramservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Honor",
+    "service": "MMM Agramservis",
+    "address": "Samoborska cesta 145, 10090 Zagreb",
+    "kontakt": "info@agramservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Motorola",
+    "service": "MMM Agramservis",
+    "address": "Samoborska cesta 145, 10090 Zagreb",
+    "kontakt": "info@agramservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "MeanIT",
+    "service": "Bijelić Co d.o.o.",
+    "address": "Sv. L. B. Mandica 13a, 31000 Osijek",
+    "kontakt": "servis@bijelic-co.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Botslab Kids",
+    "service": "Bijelić Co d.o.o.",
+    "address": "Sv. L. B. Mandica 13a, 31000 Osijek",
+    "kontakt": "servis@bijelic-co.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Panasonic mobiteli - telefoni",
+    "service": "SE-MARK d.o.o.",
+    "address": "Bjelovarska 36a, 10000 Zagreb",
+    "kontakt": "servis@se-mark.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Realme mobiteli",
+    "service": "Tech Doctor",
+    "address": "Radnička cesta 1a, 10000 Zagreb",
+    "kontakt": "info@techdoctor.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Google Pixel mobiteli",
+    "service": "BigBang servis",
+    "address": "Gospodarska ulica 2 (Hala2), 10431 Sveta Nedelja",
+    "kontakt": "servis@bigbang.hr",
+    "napomena": "Svi mobiteli se zaprimaju na servis te šalju na VP skladište",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Garmin",
+    "service": "Garmin Hrvatska",
+    "address": "Karlovačka cesta 4k, 10000 Zagreb",
+    "kontakt": "garmin.hrvatska@garmin.com",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "HP laptopi",
+    "service": "Zel-cos servis",
+    "address": "Ulica Grada Chicaga 28, 10000 Zagreb",
+    "kontakt": "servis@zel-cos.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Lenovo laptopi",
+    "service": "Zel-cos servis",
+    "address": "Ulica Grada Chicaga 28, 10000 Zagreb",
+    "kontakt": "servis@zel-cos.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Acer laptopi",
+    "servisi": [
+      {
+        "service": "Microline",
+        "address": "Slavonska avenija 26/9, 10000 Zagreb",
+        "kontakt": "servis@microline.hr",
+        "napomena": "Poslati SN i račun prema servisu nakon čega će oni organizirati prikup"
+      },
+      {
+        "service": "Bitset servis",
+        "address": "Likozarjeva ulica 3, 1000 Ljubljana, Slovenija",
+        "kontakt": "info@bitset.si",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Asus laptopi",
+    "service": "Microline",
+    "address": "Slavonska avenija 26/9, 10000 Zagreb",
+    "kontakt": "servis@microline.hr",
+    "napomena": "Nalog preko Asus RMA obrasca",
+    "documents": [],
+    "website": "https://eu-rma.asus.com/hr/info/warranty"
+  },
+  {
+    "brand": "Dell laptopi",
+    "service": "Bitset servis",
+    "address": "Likozarjeva ulica 3, 1000 Ljubljana, Slovenija",
+    "kontakt": "info@bitset.si",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Asus mobiteli",
+    "service": "Asus Czech Service s.r.o.",
+    "address": "Sarka Foltynova Hrusovska 2678, 70200 Ostrava, Czech Republic",
+    "kontakt": "advance.rma.eu@asus.com",
+    "napomena": "Nalog preko Asus RMA obrasca gdje nakon popunjavanja servis šalje prikup",
+    "documents": [],
+    "website": "https://eu-rma.asus.com/hr/info/warranty"
+  },
+  {
+    "brand": "Logitech",
+    "servisi": [
+      {
+        "service": "Big Partner",
+        "address": "Madžarska ulica 12, 1000 Ljubljana, Slovenija",
+        "kontakt": "iztok.zakrajsek@bigbang.si; jure.kolman@bigbang.si; barbara.kozmelj@bigbang.si",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "ASBIS-CR",
+        "address": "Rakitnica 3, 10000 Zagreb",
+        "kontakt": "servis@asbis.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Microline",
+        "address": "Slavonska avenija 26/9, 10000 Zagreb",
+        "kontakt": "servis@microline.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Keychron",
+    "service": "ITS Intrade",
+    "address": "Unska 2a, 10000 Zagreb",
+    "kontakt": "info@its-it.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "DJI",
+    "service": "ITS Intrade",
+    "address": "Unska 2a, 10000 Zagreb",
+    "kontakt": "info@its-it.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "GoPro",
+    "service": "ITS Intrade",
+    "address": "Unska 2a, 10000 Zagreb",
+    "kontakt": "info@its-it.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "WhiteShark",
+    "service": "Šmit electronic",
+    "address": "Metanska 1, 44320 Kutina",
+    "kontakt": "servis@smit-electronic.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [
+      {
+        "name": "Šmit reklamacijski zapisnik",
+        "url": "document/Reklamacijski_zapisnik.doc"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Baracuda",
+    "service": "Šmit electronic",
+    "address": "Metanska 1, 44320 Kutina",
+    "kontakt": "servis@smit-electronic.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [
+      {
+        "name": "Šmit reklamacijski zapisnik",
+        "url": "document/Reklamacijski_zapisnik.doc"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Redragon",
+    "service": "Colby d.o.o.",
+    "address": "Limbuška 2, 2341 Limbuš, Slovenia",
+    "kontakt": "servis@colby.si",
+    "napomena": "Šalje se mail sa nalogom servisa da se napravi prikup reklmairanog proizvoda.",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "JBL",
+    "service": "KBZ electronic",
+    "address": "Trnjanska 117, 10000 Zagreb",
+    "kontakt": "kbz@kbz-electronic.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Sony audio",
+    "service": "ATV Electronic",
+    "address": "Ulica Braće Stipčića 5A, 51000 Rijeka",
+    "kontakt": "info@atvelectronic.hr",
+    "napomena": "Nalog preko ATV Electronic obrasca",
+    "documents": [],
+    "website": "https://atvelectronic.hr/prijevoz"
+  },
+  {
+    "brand": "PlayStation",
+    "service": "BigBang",
+    "address": "Gospodarska ulica 2 (Hala2), 10431 Sveta Nedelja",
+    "kontakt": "povrati@bigbang.hr",
+    "napomena": "Kontroleri nakon provjere mijenjaju se 1za1, konzole se šalju na servis, van jamstveni idu staro za novo.",
+    "documents": [
+      {
+        "name": "PlayStation staro za novo",
+        "url": "document/PS_staro_za_novo.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Nintendo",
+    "service": "CD Media S.E.",
+    "address": "Small Atrina Br. 32, Kifisias Ave, 151 25, Marousi, Atena, Grčka",
+    "kontakt": "ncs@cdmedia.gr",
+    "napomena": "Nalog preko Nintendo podrške putem obrasca",
+    "documents": [],
+    "website": "https://gr.cdmediase.eu/nintendo-support/?ln=hr"
+  },
+  {
+    "brand": "Skullcandy",
+    "service": "Omnilab",
+    "address": "Oreškovićeva 6c/3, 10000 Zagreb",
+    "kontakt": "omnilab.doo@gmail.com",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Instax Fujifilm foto",
+    "service": "Big Partner",
+    "address": "Madžarska ulica 12, 1000 Ljubljana, Slovenija",
+    "kontakt": "savo.sofric@bigpartner.si; barbara.kozmelj@bigbang.si; reklamacije@bigbang.hr",
+    "napomena": "Nakon provjere uređaj se mijenja 1za1 te uz najavu na mail adrese šalje u Sloveniju",
+    "documents": [
+      {
+        "name": "Instax povrat obrazac",
+        "url": "document/Instax_povrat.xlsx"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Shark Ninja",
+    "service": "ITS Intrade",
+    "address": "Unska 2a, 10000 Zagreb",
+    "kontakt": "info@its-it.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [
+      {
+        "name": "Jamstveni list",
+        "url": "document/Shark Ninja Jamstveni List - ITS Servis.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Polaroid",
+    "service": "FTG distribucija d.o.o.",
+    "address": "Kalinovica 8, 10000 Zagreb",
+    "kontakt": "servis@ftg.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Epson printer",
+    "service": "Eurotrade d.o.o. servis",
+    "address": "Gospodarska ulica 15, 10255 Donji Stupnik",
+    "kontakt": "servis@eurotrade.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "HP printer",
+    "service": "Zel-cos servis",
+    "address": "Ulica Grada Chicaga 28, 10000 Zagreb",
+    "kontakt": "servis@zel-cos.hr",
+    "napomena": "SSvi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Canon printer",
+    "service": "Microline",
+    "address": "Slavonska avenija 26/9, 10000 Zagreb",
+    "kontakt": "servis@microline.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "AOC monitor",
+    "service": "Inpro d.o.o.",
+    "address": "Miroslava Krleže 28, 40000 Čakovec",
+    "kontakt": "inpro@inpro.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Philips monitor",
+    "service": "Inpro d.o.o.",
+    "address": "Miroslava Krleže 28, 40000 Čakovec",
+    "kontakt": "inpro@inpro.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "LG monitor",
+    "service": "Supra Mea",
+    "address": "Maksimirska 129, 10000 Zagreb",
+    "kontakt": "info@supra-mea.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Asus monitor",
+    "service": "Microline",
+    "address": "Slavonska avenija 26/9, 10000 Zagreb",
+    "kontakt": "servis@microline.hr",
+    "napomena": "Nalog preko Asus RMA obrasca",
+    "documents": [],
+    "website": "https://eu-rma.asus.com/hr/info/warranty"
+  },
+  {
+    "brand": "Canyon",
+    "service": "ASBISC-CR",
+    "address": "Rakitnica 3, 10000 Zagreb",
+    "kontakt": "servis@asbis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Jimmy",
+    "service": "Smartus d.o.o.",
+    "address": "Ljubljanska cesta 18c, 51000 Rijeka",
+    "kontakt": "servis@smartus.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Egoni romobil",
+    "service": "Enim sport d.o.o.",
+    "address": "Vladimira Varićaka 18, 10000 Zagreb",
+    "kontakt": "servis@enimsport.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Segway",
+    "service": "ITS Intrade",
+    "address": "Unska 2a, 10000 Zagreb",
+    "kontakt": "info@its-it.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Amazfit",
+    "service": "ITS Intrade",
+    "address": "Unska 2a, 10000 Zagreb",
+    "kontakt": "info@its-it.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Volan Flashfire (Hurricane, Suzuka, Imola, Monza)",
+    "service": "Mobidom servis",
+    "address": "Industrijska ulica 5a, 10412 Donja Lomnica",
+    "kontakt": "info@mobidom.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Karcher",
+    "servisi": [
+      {
+        "service": "Karcher servis",
+        "address": "Samoborska cesta 169a, 10090 Zagreb",
+        "kontakt": "servis-hr@karcher.com",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Karcher servis",
+        "address": "Lovački put 1, 21000 Split",
+        "kontakt": "servis-split@karcher.com",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": "https://www.karcher.com/hr/servisi/podrska/adrese-servisa.html"
+  },
+  {
+    "brand": "HiFuture",
+    "service": "Logista",
+    "address": "Dražice Zamet 123b, 51000 Rijeka",
+    "kontakt": "info@logista.hr",
+    "napomena": "Šalje se mail sa radnim nalogom i računom, te servis šalje prikup",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Dlink",
+    "service": "MR servis",
+    "address": "Slavonska avenija 26/4, 10000 Zagreb",
+    "kontakt": "info@mrservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "TPlink",
+    "servisi": [
+      {
+        "service": "ASBIS-CR",
+        "address": "Rakitnica 3, 10000 Zagreb",
+        "kontakt": "servis@asbis.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "Microline",
+        "address": "Slavonska avenija 26/9, 10000 Zagreb",
+        "kontakt": "servis@microline.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Razer",
+    "service": "Comtel Corp d.o.o.",
+    "address": "Riječka ulica 10, 10000 Zagreb",
+    "kontakt": "prodaja@comtel.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "SteelSeries",
+    "service": "MR servis",
+    "address": "Slavonska avenija 26/4, 10000 Zagreb",
+    "kontakt": "info@mrservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "HyperX",
+    "service": "Also d.o.o.",
+    "address": "Zelena aleja 53, 10410 Velika Gorica",
+    "kontakt": "hxchannelcareemea@hp.com",
+    "napomena": "Unutar 30 dana radi se DOA claim, šalje se u Also, starije od 30 dana povrat unutar garancije, excel tablicu popuniti s podatcima i presliku maloprodajnog računa i slati na mail",
+    "documents": [
+      {
+        "name": "HyperX Channel Claim",
+        "url": "document/HyperX_Channel_Claim.xlsx"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Microsoft",
+    "service": "MR servis",
+    "address": "Slavonska avenija 26/4, 10000 Zagreb",
+    "kontakt": "info@mrservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Kingstone",
+    "servisi": [
+      {
+        "service": "Microline",
+        "address": "Slavonska avenija 26/9, 10000 Zagreb",
+        "kontakt": "servis@microline.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      },
+      {
+        "service": "ASBIS-CR",
+        "address": "Rakitnica 3, 10000 Zagreb",
+        "kontakt": "servis@asbis.hr",
+        "napomena": "Svi uređaji se šalju u servis"
+      }
+    ],
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Denver",
+    "service": "Tehnocentar",
+    "address": "Prilaz Ivana Visina 7, 10000 Zagreb",
+    "kontakt": "servis@tehnocentar.hr",
+    "napomena": "Na mail se šalje opis kvara i račun, te servis osigurava prikup uređaja i slanje na servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "ADATA",
+    "service": "Microline",
+    "address": "Slavonska avenija 26/9, 10000 Zagreb",
+    "kontakt": "servis@microline.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "SanDisk",
+    "service": "Also d.o.o.",
+    "address": "Zelena aleja 53, 10410 Velika Gorica",
+    "kontakt": "info.ALSOCroatia@also.com",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Seagate",
+    "service": "Also d.o.o.",
+    "address": "Zelena aleja 53, 10410 Velika Gorica",
+    "kontakt": "info.ALSOCroatia@also.com",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Port",
+    "service": "Microline",
+    "address": "Slavonska avenija 26/9, 10000 Zagreb",
+    "kontakt": "servis@microline.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Ecovacs",
+    "service": "DA Fix servis",
+    "address": "Podbrežje III. 39, 10000 Zagreb",
+    "kontakt": "info@dafixservis.hr",
+    "napomena": "Svi artikli se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Ksix",
+    "service": "Carrier j.d.o.o.",
+    "address": "Puškarićeva 15, 10250 Lučko",
+    "kontakt": "igor.lovrencic@carrier.com.hr",
+    "napomena": "Svi uređaji se šalju u servis",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Anker Eufy",
+    "service": "MMM Agramservis",
+    "address": "Samoborska cesta 145, 10000 Zagreb",
+    "kontakt": "info@agramservis.hr",
+    "napomena": "Ispunja se reklamacijski zapisnik i šalje se Agramu za prikup",
+    "documents": [
+      {
+        "name": "Agram reklamacijski zapisnik",
+        "url": "document/Agram_reklamacijski_zapisnik.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Anker Nebula",
+    "service": "MMM Agramservis",
+    "address": "Samoborska cesta 145, 10000 Zagreb",
+    "kontakt": "info@agramservis.hr",
+    "napomena": "Ispunja se reklamacijski zapisnik i šalje se Agramu za prikup",
+    "documents": [
+      {
+        "name": "Agram reklamacijski zapisnik",
+        "url": "document/Agram_reklamacijski_zapisnik.pdf"
+      }
+    ],
+    "website": null
+  },
+  {
+    "brand": "Anker Soundcore",
+    "service": "Logista",
+    "address": "Dražice Zamet 123b, 51000 Rijeka",
+    "kontakt": "info@logista.hr",
+    "napomena": "Zamjena 1 za 1",
+    "documents": [],
+    "website": null
+  },
+  {
+    "brand": "Backbone",
+    "service": "Omniacom Ltd",
+    "address": "Complex Mladost 1, bl.12, ent. A, parter, 1700 Sofia, Bulgaria",
+    "kontakt": "tomislav@vip-trading.com",
+    "napomena": "Ispuniti RMA obrazac polja označena crvenim i poslati ga na mail",
+    "documents": [
+      {
+        "name": "Backbone RMA obrazac",
+        "url": "document/Backbone_RMA_Request.xlsx"
+      }
+    ],
+    "website": null
+  }
+]

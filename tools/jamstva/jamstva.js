@@ -36,6 +36,9 @@ const groupDescriptions = {
 const priceInput = document.querySelector("#price");
 const groupSelect = document.querySelector("#group");
 const warrantySelect = document.querySelector("#warranty");
+const warrantyCompareSelect = document.querySelector("#warrantyCompare");
+const compareToggle = document.querySelector("#compareToggle");
+const compareWarrantyField = document.querySelector("#compareWarrantyField");
 const installmentsInput = document.querySelector("#installments");
 
 const calculateBtn = document.querySelector("#calculateBtn");
@@ -54,9 +57,99 @@ const totalPriceEl = document.querySelector("#totalPrice");
 const monthlyBaseEl = document.querySelector("#monthlyBase");
 const monthlyTotalEl = document.querySelector("#monthlyTotal");
 const monthlyDiffEl = document.querySelector("#monthlyDiff");
+const compareResultsEl = document.querySelector("#compareResults");
+const compareWarrantyNameAEl = document.querySelector("#compareWarrantyNameA");
+const compareWarrantyNameBEl = document.querySelector("#compareWarrantyNameB");
+const compareTotalAEl = document.querySelector("#compareTotalA");
+const compareTotalBEl = document.querySelector("#compareTotalB");
+const compareDifferenceEl = document.querySelector("#compareDifference");
 const installmentValueEl = document.querySelector("#installmentValue");
 const loaderEl = document.querySelector("#loader");
 const appEl = document.querySelector("#app");
+function populateCompareWarranties(groupName) {
+  if (!warrantyCompareSelect) {
+    return;
+  }
+
+  warrantyCompareSelect.innerHTML = "";
+  warrantyCompareSelect.disabled = true;
+
+  if (!groupName) {
+    warrantyCompareSelect.innerHTML = '<option value="">Prvo odaberi grupu</option>';
+    return;
+  }
+
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Odaberi drugo jamstvo";
+  warrantyCompareSelect.appendChild(placeholder);
+
+  warrantyData[groupName].forEach((warranty, index) => {
+    const option = document.createElement("option");
+    option.value = String(index);
+    option.textContent = `${warranty.name} (${warranty.percent}%)`;
+    warrantyCompareSelect.appendChild(option);
+  });
+
+  warrantyCompareSelect.disabled = !compareToggle.checked;
+}
+function resetCompareResults() {
+  if (!compareResultsEl) {
+    return;
+  }
+
+  compareResultsEl.classList.add("hidden");
+  compareWarrantyNameAEl.textContent = "-";
+  compareWarrantyNameBEl.textContent = "-";
+  compareTotalAEl.textContent = formatEuro(0);
+  compareTotalBEl.textContent = formatEuro(0);
+  compareDifferenceEl.textContent = formatEuro(0);
+}
+
+function updateCompareVisibility() {
+  if (!compareToggle || !compareWarrantyField || !warrantyCompareSelect) {
+    return;
+  }
+
+  const shouldCompare = compareToggle.checked;
+  compareWarrantyField.classList.toggle("hidden", !shouldCompare);
+  warrantyCompareSelect.disabled = !shouldCompare || !groupSelect.value;
+
+  if (!shouldCompare) {
+    warrantyCompareSelect.value = "";
+    resetCompareResults();
+  }
+}
+
+function calculateWarrantyComparison(price, selectedGroup, selectedWarranty) {
+  if (!compareToggle || !compareToggle.checked) {
+    resetCompareResults();
+    return;
+  }
+
+  const compareWarrantyIndex = warrantyCompareSelect.value;
+
+  if (compareWarrantyIndex === "") {
+    showError(errorEl, "Odaberi drugo jamstvo za usporedbu.");
+    markInvalidInput(warrantyCompareSelect);
+    resetCompareResults();
+    return;
+  }
+
+  const compareWarranty = warrantyData[selectedGroup][Number(compareWarrantyIndex)];
+  const totalA = price + price * (selectedWarranty.percent / 100);
+  const totalB = price + price * (compareWarranty.percent / 100);
+  const difference = Math.abs(totalB - totalA);
+
+  compareWarrantyNameAEl.textContent = selectedWarranty.name;
+  compareWarrantyNameBEl.textContent = compareWarranty.name;
+  animateEuro(compareTotalAEl, totalA);
+  animateEuro(compareTotalBEl, totalB);
+  animateEuro(compareDifferenceEl, difference);
+
+  revealSection(compareResultsEl);
+  pulseElement(compareDifferenceEl.closest(".compare-difference"));
+}
 
 let latestCalculation = null;
 let latestInstallmentCalculation = null;
@@ -64,6 +157,40 @@ const animationDuration = 650;
 
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function initializeReactiveBackground() {
+  if (prefersReducedMotion()) {
+    return;
+  }
+
+  let animationFrame = null;
+  let mouseX = 50;
+  let mouseY = 35;
+
+  function updateMouseGlow() {
+    document.documentElement.style.setProperty("--mouse-x", `${mouseX}%`);
+    document.documentElement.style.setProperty("--mouse-y", `${mouseY}%`);
+    animationFrame = null;
+  }
+
+  window.addEventListener("pointermove", (event) => {
+    mouseX = (event.clientX / window.innerWidth) * 100;
+    mouseY = (event.clientY / window.innerHeight) * 100;
+
+    if (!animationFrame) {
+      animationFrame = requestAnimationFrame(updateMouseGlow);
+    }
+  });
+
+  window.addEventListener("pointerleave", () => {
+    mouseX = 50;
+    mouseY = 35;
+
+    if (!animationFrame) {
+      animationFrame = requestAnimationFrame(updateMouseGlow);
+    }
+  });
 }
 
 function formatEuro(value) {
@@ -190,6 +317,7 @@ function runIntroLoader() {
     loaderEl.remove();
   }, 2850);
 }
+
 
 function parsePrice(value) {
   const normalizedValue = value
@@ -320,6 +448,7 @@ function calculateWarranty() {
 
     revealSection(resultsEl);
     pulseElement(totalPriceEl.closest(".result-box"));
+    calculateWarrantyComparison(price, selectedGroup, selectedWarranty);
     setButtonLoading(calculateBtn, false);
   }, prefersReducedMotion() ? 0 : 180);
 }
@@ -371,24 +500,33 @@ function calculateInstallments() {
 function resetCalculator() {
   priceInput.value = "";
   groupSelect.value = "";
+  if (compareToggle) {
+    compareToggle.checked = false;
+  }
+  if (warrantyCompareSelect) {
+    warrantyCompareSelect.value = "";
+  }
   installmentsInput.value = "12";
   updateInstallmentDisplay();
   latestCalculation = null;
   latestInstallmentCalculation = null;
 
   populateWarranties("");
+  populateCompareWarranties("");
+  updateCompareVisibility();
+  resetCompareResults();
   hideAllErrors();
   resultsEl.classList.add("hidden");
   rateResultsEl.classList.add("hidden");
 
-  [priceInput, groupSelect, warrantySelect, installmentsInput].forEach(clearInvalidState);
+  [priceInput, groupSelect, warrantySelect, warrantyCompareSelect, installmentsInput].filter(Boolean).forEach(clearInvalidState);
   [basePriceEl, warrantyPriceEl, totalPriceEl, monthlyBaseEl, monthlyTotalEl, monthlyDiffEl].forEach((element) => {
     element.textContent = formatEuro(0);
   });
 }
 
 function getNextOfferNumber() {
-  const storageKey = "bigBangOfferNumber";
+  const storageKey = "novaSuiteOfferNumber";
   const currentNumber = Number(localStorage.getItem(storageKey) || "0") + 1;
   localStorage.setItem(storageKey, String(currentNumber));
   return String(currentNumber).padStart(4, "0");
@@ -655,7 +793,7 @@ async function generatePdfOffer() {
 
         <div class="pdf-header">
           <div>
-            <div class="pdf-brand">BIG BANG</div>
+            <div class="pdf-brand">Nova Suite</div>
             <div class="pdf-subtitle">Ponuda za jamstvo</div>
           </div>
           <div class="pdf-meta">
@@ -686,8 +824,8 @@ async function generatePdfOffer() {
         </div>
 
         <div class="pdf-footer">
-          <span>BIG BANG • Automatski kalkulator jamstva</span>
-          <span>bigbang.hr</span>
+          <span>Nova Suite • Automatski kalkulator jamstva</span>
+          <span>Internal tool</span>
         </div>
       </div>
     `;
@@ -712,7 +850,7 @@ async function generatePdfOffer() {
     const pageHeight = doc.internal.pageSize.getHeight();
 
     doc.addImage(imageData, "PNG", 0, 0, pageWidth, pageHeight);
-    doc.save(`big-bang-ponuda-${offerNumber}-${fileDate}.pdf`);
+    doc.save(`nova-suite-ponuda-${offerNumber}-${fileDate}.pdf`);
   } catch (error) {
     console.error(error);
     showError(errorEl, "PDF ponuda se nije uspjela izraditi. Pokušaj ponovno.");
@@ -742,17 +880,36 @@ function handleEnterKey(event) {
 
 function initializeCalculator() {
   runIntroLoader();
+  initializeReactiveBackground();
   populateGroups();
   populateWarranties("");
+  populateCompareWarranties("");
+  updateCompareVisibility();
   updateInstallmentDisplay();
 
   groupSelect.addEventListener("change", (event) => {
     clearInvalidState(groupSelect);
     populateWarranties(event.target.value);
+    populateCompareWarranties(event.target.value);
+    resetCompareResults();
+    updateCompareVisibility();
     resultsEl.classList.add("hidden");
   });
 
   warrantySelect.addEventListener("change", () => clearInvalidState(warrantySelect));
+  if (warrantyCompareSelect) {
+    warrantyCompareSelect.addEventListener("change", () => {
+      clearInvalidState(warrantyCompareSelect);
+      resetCompareResults();
+    });
+  }
+
+  if (compareToggle) {
+    compareToggle.addEventListener("change", () => {
+      updateCompareVisibility();
+      resetCompareResults();
+    });
+  }
   installmentsInput.addEventListener("input", handleInstallmentSliderInput);
   priceInput.addEventListener("input", () => clearInvalidState(priceInput));
 
