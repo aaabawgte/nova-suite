@@ -231,9 +231,26 @@ main {
   text-decoration: none;
 }
 
+
 .brand-mark:focus-visible {
   outline: 3px solid rgba(255, 255, 255, 0.42);
   outline-offset: 6px;
+}
+
+.brand-mark img {
+  display: block;
+  width: clamp(190px, 24vw, 340px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.2));
+}
+
+.loader-wordmark img {
+  display: block;
+  width: min(420px, 76vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.28));
 }
 
 
@@ -1587,6 +1604,14 @@ button:active {
     font-size: clamp(32px, 12vw, 46px);
     padding: 12px 18px;
     border-radius: 22px;
+  }
+
+  .brand-mark img {
+    width: min(280px, 72vw);
+  }
+
+  .loader-wordmark img {
+    width: min(310px, 78vw);
   }
 
   #loader.loader-exit .loader-logo {
