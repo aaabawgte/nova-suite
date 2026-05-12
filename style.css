@@ -245,8 +245,10 @@ main {
 
 .loader-wordmark img {
   display: block;
-  width: min(260px, 58vw);
+  width: min(180px, 44vw) !important;
   height: auto;
+  max-height: 180px;
+  max-width: 180px;
   object-fit: contain;
   border-radius: 0;
   background: transparent;
@@ -1611,7 +1613,9 @@ button:active {
   }
 
   .loader-wordmark img {
-    width: min(230px, 62vw);
+    width: min(160px, 48vw) !important;
+    max-height: 160px;
+    max-width: 160px;
   }
 
   #loader.loader-exit .loader-logo {
