@@ -1216,6 +1216,33 @@ button:active {
   letter-spacing: -0.6px;
 }
 
+.discount-card .brand-name {
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.18;
+}
+
+.discount-value {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0b74d1 0%, #0050a0 55%, #003d7a 100%);
+  box-shadow:
+    0 12px 28px rgba(0, 80, 160, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: -0.2px;
+}
+
+.discount-card .info-row:first-of-type {
+  background: rgba(232, 242, 255, 0.78);
+  border-color: rgba(0, 80, 160, 0.16);
+}
+
 .info-row {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -1665,6 +1692,18 @@ button:active {
   .brand-name {
     font-size: 25px;
   }
+
+  /* --- Inserted discount-card mobile rules --- */
+
+  .discount-card .brand-name {
+    font-size: 22px;
+  }
+
+  .discount-value {
+    width: 100%;
+  }
+
+  /* ------------------------------------------ */
 
   .download-btn {
     width: 100%;

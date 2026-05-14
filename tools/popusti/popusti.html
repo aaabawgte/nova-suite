@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popusti artikala • Nova Suite</title>
+
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" type="image/png" href="../../assets/favicon.png">
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-wordmark">
+      <img src="../../assets/logo.png" alt="Nova Suite">
+    </div>
+  </div>
+
+  <main id="app" class="app-hidden">
+    <div class="app-shell">
+      <header class="hero">
+        <a href="../../index.html" class="brand-mark">
+          <img src="../../assets/logo.png" alt="Nova Suite">
+        </a>
+
+        <h1>CCOW Popusti</h1>
+        <p>Pretraži artikl i odmah provjeri postoji li aktivni popust.</p>
+      </header>
+
+      <section class="card search-card">
+        <div class="search-input-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Upiši naziv artikla ili brand..."
+            autocomplete="off"
+          >
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <div id="results" class="results"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="popusti.js"></script>
+</body>
+</html>
