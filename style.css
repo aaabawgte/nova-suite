@@ -1252,6 +1252,10 @@ button:active {
   overflow-wrap: anywhere;
 }
 
+.info-value.discount-value {
+  color: #ffffff;
+}
+
 .icon {
   display: inline-flex;
   width: 22px;
