@@ -485,7 +485,7 @@ button:active {
 }
 
 .pdf-button::before {
-  content: "ðŸ“„";
+  content: "📄";
   margin-right: 10px;
   font-size: 18px;
   position: relative;
