@@ -303,10 +303,35 @@ main {
   box-shadow: 0 22px 54px rgba(0, 16, 33, 0.32);
 }
 
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+.additional-products {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.additional-product-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.additional-remove-field {
+  grid-column: 1 / -1;
+  max-width: 180px;
+}
+
+.remove-additional-product {
+  min-height: 48px;
+  padding-inline: 14px;
+  white-space: nowrap;
 }
 
 label {
@@ -485,7 +510,7 @@ button:active {
 }
 
 .pdf-button::before {
-  content: "ðŸ“„";
+  content: "📄";
   margin-right: 10px;
   font-size: 18px;
   position: relative;
@@ -579,11 +604,56 @@ button:active {
   animation: shake 0.28s ease both;
 }
 
+
 .small-note {
   color: var(--muted);
   font-size: 14px;
   margin-top: 14px;
   text-align: center;
+}
+
+.group-help {
+  margin: 18px 0 10px;
+  text-align: center;
+}
+
+.group-help-toggle {
+  width: auto;
+  min-width: 210px;
+  padding-inline: 18px;
+}
+
+.group-help-panel {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.group-help-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.group-help-card {
+  padding: 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+.group-help-card h3 {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+.group-help-card p {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 650;
 }
 
 .rate-section {
@@ -1576,9 +1646,28 @@ button:active {
     grid-template-columns: 1fr;
   }
 
-  .actions {
-    flex-direction: column;
+  .group-help-grid {
+    grid-template-columns: 1fr;
   }
+
+  .group-help-toggle {
+    width: 100%;
+  }
+
+  .additional-product-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .additional-remove-field {
+    max-width: none;
+    min-width: 0;
+  }
+
+  .remove-additional-product {
+    width: 100%;
+  }
+
 
   .card {
     padding: 20px;

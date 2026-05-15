@@ -33,6 +33,9 @@ const groupDescriptions = {
   "Bicikli i romobili": "Električni bicikli i električni romobili"
 };
 
+const NO_WARRANTY_GROUP = "__NO_WARRANTY__";
+const NO_WARRANTY_LABEL = "Bez jamstva";
+
 const priceInput = document.querySelector("#price");
 const groupSelect = document.querySelector("#group");
 const warrantySelect = document.querySelector("#warranty");
@@ -45,6 +48,10 @@ const calculateBtn = document.querySelector("#calculateBtn");
 const resetBtn = document.querySelector("#resetBtn");
 const rateBtn = document.querySelector("#rateBtn");
 const pdfBtn = document.querySelector("#pdfBtn");
+const addProductBtn = document.querySelector("#addProductBtn");
+const additionalProductsEl = document.querySelector("#additionalProducts");
+const groupHelpToggle = document.querySelector("#groupHelpToggle");
+const groupHelpPanel = document.querySelector("#groupHelpPanel");
 
 const errorEl = document.querySelector("#error");
 const rateErrorEl = document.querySelector("#rateError");
@@ -79,10 +86,21 @@ function populateCompareWarranties(groupName) {
     return;
   }
 
+  if (groupName === NO_WARRANTY_GROUP) {
+    warrantyCompareSelect.innerHTML = '<option value="">Nema jamstva za usporedbu</option>';
+    warrantyCompareSelect.disabled = true;
+    return;
+  }
+
   const placeholder = document.createElement("option");
   placeholder.value = "";
   placeholder.textContent = "Odaberi drugo jamstvo";
   warrantyCompareSelect.appendChild(placeholder);
+
+  const noWarrantyOption = document.createElement("option");
+  noWarrantyOption.value = "none";
+  noWarrantyOption.textContent = "Bez jamstva (0%)";
+  warrantyCompareSelect.appendChild(noWarrantyOption);
 
   warrantyData[groupName].forEach((warranty, index) => {
     const option = document.createElement("option");
@@ -113,12 +131,20 @@ function updateCompareVisibility() {
 
   const shouldCompare = compareToggle.checked;
   compareWarrantyField.classList.toggle("hidden", !shouldCompare);
-  warrantyCompareSelect.disabled = !shouldCompare || !groupSelect.value;
+  warrantyCompareSelect.disabled = !shouldCompare || !groupSelect.value || groupSelect.value === NO_WARRANTY_GROUP;
 
   if (!shouldCompare) {
     warrantyCompareSelect.value = "";
     resetCompareResults();
   }
+}
+
+function getWarrantyByValue(groupName, warrantyValue) {
+  if (groupName === NO_WARRANTY_GROUP || warrantyValue === "none") {
+    return { name: NO_WARRANTY_LABEL, percent: 0 };
+  }
+
+  return warrantyData[groupName][Number(warrantyValue)];
 }
 
 function calculateWarrantyComparison(price, selectedGroup, selectedWarranty) {
@@ -136,7 +162,7 @@ function calculateWarrantyComparison(price, selectedGroup, selectedWarranty) {
     return;
   }
 
-  const compareWarranty = warrantyData[selectedGroup][Number(compareWarrantyIndex)];
+  const compareWarranty = getWarrantyByValue(selectedGroup, compareWarrantyIndex);
   const totalA = price + price * (selectedWarranty.percent / 100);
   const totalB = price + price * (compareWarranty.percent / 100);
   const difference = Math.abs(totalB - totalA);
@@ -154,6 +180,7 @@ function calculateWarrantyComparison(price, selectedGroup, selectedWarranty) {
 let latestCalculation = null;
 let latestInstallmentCalculation = null;
 const animationDuration = 650;
+let additionalProductCounter = 0;
 
 function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -347,6 +374,10 @@ function hideAllErrors() {
 }
 
 function populateGroups() {
+  const noWarrantyOption = document.createElement("option");
+  noWarrantyOption.value = NO_WARRANTY_GROUP;
+  noWarrantyOption.textContent = NO_WARRANTY_LABEL;
+  groupSelect.appendChild(noWarrantyOption);
   Object.keys(warrantyData).forEach((groupName) => {
     const option = document.createElement("option");
     option.value = groupName;
@@ -354,6 +385,7 @@ function populateGroups() {
     groupSelect.appendChild(option);
   });
 }
+
 
 function populateWarranties(groupName) {
   warrantySelect.innerHTML = "";
@@ -366,10 +398,22 @@ function populateWarranties(groupName) {
     return;
   }
 
+  if (groupName === NO_WARRANTY_GROUP) {
+    warrantySelect.innerHTML = '<option value="none">Jamstvo nije potrebno</option>';
+    warrantySelect.value = "none";
+    warrantySelect.disabled = true;
+    return;
+  }
+
   const placeholder = document.createElement("option");
   placeholder.value = "";
   placeholder.textContent = "Odaberi jamstvo";
   warrantySelect.appendChild(placeholder);
+
+  const noWarrantyOption = document.createElement("option");
+  noWarrantyOption.value = "none";
+  noWarrantyOption.textContent = "Bez jamstva (0%)";
+  warrantySelect.appendChild(noWarrantyOption);
 
   warrantyData[groupName].forEach((warranty, index) => {
     const option = document.createElement("option");
@@ -379,6 +423,110 @@ function populateWarranties(groupName) {
   });
 
   warrantySelect.disabled = false;
+}
+
+function buildWarrantyOptions(groupName) {
+  if (!groupName) {
+    return '<option value="">Prvo odaberi grupu</option>';
+  }
+  if (groupName === NO_WARRANTY_GROUP) {
+    return '<option value="none">Jamstvo nije potrebno</option>';
+  }
+
+  const warrantyOptions = warrantyData[groupName].map((warranty, index) => {
+    return `<option value="${index}">${escapeHtml(warranty.name)} (${warranty.percent}%)</option>`;
+  }).join("");
+
+  return `
+    <option value="">Odaberi jamstvo</option>
+    <option value="none">Bez jamstva (0%)</option>
+    ${warrantyOptions}
+  `;
+}
+
+function addAdditionalProduct() {
+  if (!additionalProductsEl) {
+    return;
+  }
+
+  additionalProductCounter += 1;
+
+  const productRow = document.createElement("div");
+  productRow.className = "additional-product-row";
+  productRow.innerHTML = `
+    <div class="form-field">
+      <label for="additionalPrice${additionalProductCounter}">Cijena proizvoda</label>
+      <input id="additionalPrice${additionalProductCounter}" class="additional-price" type="text" inputmode="decimal" placeholder="npr. 499,99">
+    </div>
+
+    <div class="form-field">
+      <label for="additionalGroup${additionalProductCounter}">Grupa proizvoda</label>
+      <select id="additionalGroup${additionalProductCounter}" class="additional-group">
+        <option value="">Odaberi grupu</option>
+        <option value="${NO_WARRANTY_GROUP}">${NO_WARRANTY_LABEL}</option>
+        ${Object.keys(warrantyData).map((groupName) => `<option value="${escapeHtml(groupName)}">${escapeHtml(groupName)}</option>`).join("")}
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="additionalWarranty${additionalProductCounter}">Jamstvo</label>
+      <select id="additionalWarranty${additionalProductCounter}" class="additional-warranty" disabled>
+        <option value="">Prvo odaberi grupu</option>
+      </select>
+    </div>
+
+    <div class="button-field additional-remove-field">
+      <button class="secondary remove-additional-product" type="button">Ukloni</button>
+    </div>
+  `;
+
+  additionalProductsEl.appendChild(productRow);
+}
+
+function getAdditionalProductCalculations() {
+  if (!additionalProductsEl) {
+    return [];
+  }
+
+  return Array.from(additionalProductsEl.querySelectorAll(".additional-product-row")).map((row, index) => {
+    const priceElement = row.querySelector(".additional-price");
+    const groupElement = row.querySelector(".additional-group");
+    const warrantyElement = row.querySelector(".additional-warranty");
+
+    const price = parsePrice(priceElement.value);
+    const selectedGroup = groupElement.value;
+    const selectedWarrantyIndex = warrantyElement.value;
+
+    if (!Number.isFinite(price) || price <= 0) {
+      showError(errorEl, `Unesi ispravnu cijenu za dodatni proizvod #${index + 2}.`);
+      markInvalidInput(priceElement);
+      return null;
+    }
+
+    if (!selectedGroup) {
+      showError(errorEl, `Odaberi grupu za dodatni proizvod #${index + 2}.`);
+      markInvalidInput(groupElement);
+      return null;
+    }
+
+    if (selectedGroup !== NO_WARRANTY_GROUP && selectedWarrantyIndex === "") {
+      showError(errorEl, `Odaberi jamstvo za dodatni proizvod #${index + 2}.`);
+      markInvalidInput(warrantyElement);
+      return null;
+    }
+
+    const selectedWarranty = getWarrantyByValue(selectedGroup, selectedWarrantyIndex);
+    const warrantyPrice = price * (selectedWarranty.percent / 100);
+
+    return {
+      basePrice: price,
+      warrantyPrice,
+      totalPrice: price + warrantyPrice,
+      group: selectedGroup,
+      groupDescription: groupDescriptions[selectedGroup],
+      warranty: selectedWarranty
+    };
+  });
 }
 
 function formatPriceInput() {
@@ -420,7 +568,7 @@ function calculateWarranty() {
     return;
   }
 
-  if (selectedWarrantyIndex === "") {
+  if (selectedGroup !== NO_WARRANTY_GROUP && selectedWarrantyIndex === "") {
     showError(errorEl, "Odaberi jamstvo.");
     resultsEl.classList.add("hidden");
     markInvalidInput(warrantySelect);
@@ -428,27 +576,57 @@ function calculateWarranty() {
     return;
   }
 
-  const selectedWarranty = warrantyData[selectedGroup][Number(selectedWarrantyIndex)];
+  const selectedWarranty = getWarrantyByValue(selectedGroup, selectedGroup === NO_WARRANTY_GROUP ? "none" : selectedWarrantyIndex);
   const warrantyPrice = price * (selectedWarranty.percent / 100);
   const totalPrice = price + warrantyPrice;
+  const additionalCalculations = getAdditionalProductCalculations();
+
+  if (additionalCalculations.some((item) => item === null)) {
+    resultsEl.classList.add("hidden");
+    setButtonLoading(calculateBtn, false);
+    return;
+  }
+
+  const allCalculations = [
+    {
+      basePrice: price,
+      warrantyPrice,
+      totalPrice,
+      group: selectedGroup,
+      groupDescription: groupDescriptions[selectedGroup],
+      warranty: selectedWarranty
+    },
+    ...additionalCalculations
+  ];
+
+  const totalBasePrice = allCalculations.reduce((sum, item) => sum + item.basePrice, 0);
+  const totalWarrantyPrice = allCalculations.reduce((sum, item) => sum + item.warrantyPrice, 0);
+  const totalFinalPrice = totalBasePrice + totalWarrantyPrice;
 
   latestCalculation = {
-    basePrice: price,
-    warrantyPrice,
-    totalPrice,
-    group: selectedGroup,
-    groupDescription: groupDescriptions[selectedGroup],
-    warranty: selectedWarranty
+    basePrice: totalBasePrice,
+    warrantyPrice: totalWarrantyPrice,
+    totalPrice: totalFinalPrice,
+    group: allCalculations.length > 1 ? "Više proizvoda" : selectedGroup,
+    groupDescription: allCalculations.length > 1 ? `${allCalculations.length} proizvoda` : groupDescriptions[selectedGroup],
+    warranty: allCalculations.length > 1 ? { name: "Kombinirano", percent: 0 } : selectedWarranty,
+    items: allCalculations
   };
 
   window.setTimeout(() => {
-    animateEuro(basePriceEl, price);
-    animateEuro(warrantyPriceEl, warrantyPrice);
-    animateEuro(totalPriceEl, totalPrice);
+    animateEuro(basePriceEl, latestCalculation.basePrice);
+    animateEuro(warrantyPriceEl, latestCalculation.warrantyPrice);
+    animateEuro(totalPriceEl, latestCalculation.totalPrice);
 
     revealSection(resultsEl);
     pulseElement(totalPriceEl.closest(".result-box"));
-    calculateWarrantyComparison(price, selectedGroup, selectedWarranty);
+
+    if (latestCalculation.items.length === 1) {
+      calculateWarrantyComparison(price, selectedGroup, selectedWarranty);
+    } else {
+      resetCompareResults();
+    }
+
     setButtonLoading(calculateBtn, false);
   }, prefersReducedMotion() ? 0 : 180);
 }
@@ -510,6 +688,11 @@ function resetCalculator() {
   updateInstallmentDisplay();
   latestCalculation = null;
   latestInstallmentCalculation = null;
+  additionalProductCounter = 0;
+
+  if (additionalProductsEl) {
+    additionalProductsEl.innerHTML = "";
+  }
 
   populateWarranties("");
   populateCompareWarranties("");
@@ -878,6 +1061,19 @@ function handleEnterKey(event) {
   }
 }
 
+function initializeGroupHelp() {
+  if (!groupHelpToggle || !groupHelpPanel) {
+    return;
+  }
+
+  groupHelpToggle.addEventListener("click", () => {
+    const isOpen = !groupHelpPanel.classList.contains("hidden");
+
+    groupHelpPanel.classList.toggle("hidden", isOpen);
+    groupHelpToggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+}
+
 function initializeCalculator() {
   runIntroLoader();
   initializeReactiveBackground();
@@ -886,6 +1082,7 @@ function initializeCalculator() {
   populateCompareWarranties("");
   updateCompareVisibility();
   updateInstallmentDisplay();
+  initializeGroupHelp();
 
   groupSelect.addEventListener("change", (event) => {
     clearInvalidState(groupSelect);
@@ -922,12 +1119,57 @@ function initializeCalculator() {
     }
   });
 
+  if (addProductBtn) {
+    addProductBtn.addEventListener("click", addAdditionalProduct);
+  }
+
+  if (additionalProductsEl) {
+    additionalProductsEl.addEventListener("change", (event) => {
+      const groupElement = event.target.closest(".additional-group");
+
+      if (!groupElement) {
+        return;
+      }
+
+      const row = groupElement.closest(".additional-product-row");
+      const warrantyElement = row.querySelector(".additional-warranty");
+
+      warrantyElement.innerHTML = buildWarrantyOptions(groupElement.value);
+      warrantyElement.disabled = !groupElement.value || groupElement.value === NO_WARRANTY_GROUP;
+      if (groupElement.value === NO_WARRANTY_GROUP) {
+        warrantyElement.value = "none";
+      }
+      clearInvalidState(groupElement);
+      clearInvalidState(warrantyElement);
+    });
+
+    additionalProductsEl.addEventListener("input", (event) => {
+      const inputElement = event.target.closest(".additional-price");
+
+      if (inputElement) {
+        clearInvalidState(inputElement);
+      }
+    });
+
+    additionalProductsEl.addEventListener("click", (event) => {
+      const removeButton = event.target.closest(".remove-additional-product");
+
+      if (!removeButton) {
+        return;
+      }
+
+      removeButton.closest(".additional-product-row").remove();
+      latestInstallmentCalculation = null;
+      rateResultsEl.classList.add("hidden");
+    });
+  }
+
   calculateBtn.addEventListener("click", calculateWarranty);
   rateBtn.addEventListener("click", calculateInstallments);
   resetBtn.addEventListener("click", resetCalculator);
   pdfBtn.addEventListener("click", generatePdfOffer);
 
-  [calculateBtn, rateBtn, resetBtn, pdfBtn].forEach((button) => {
+  [addProductBtn, calculateBtn, rateBtn, resetBtn, pdfBtn].filter(Boolean).forEach((button) => {
     button.addEventListener("click", addRipple);
   });
 }
