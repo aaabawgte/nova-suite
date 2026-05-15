@@ -529,14 +529,14 @@ function getAdditionalProductCalculations() {
   });
 }
 
-function formatPriceInput() {
-  const price = parsePrice(priceInput.value);
+function formatPriceInput(inputElement = priceInput) {
+  const price = parsePrice(inputElement.value);
 
   if (!Number.isFinite(price) || price <= 0) {
     return;
   }
 
-  priceInput.value = new Intl.NumberFormat("hr-HR", {
+  inputElement.value = new Intl.NumberFormat("hr-HR", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   }).format(price);
@@ -1110,7 +1110,7 @@ function initializeCalculator() {
   installmentsInput.addEventListener("input", handleInstallmentSliderInput);
   priceInput.addEventListener("input", () => clearInvalidState(priceInput));
 
-  priceInput.addEventListener("blur", formatPriceInput);
+  priceInput.addEventListener("blur", () => formatPriceInput(priceInput));
   priceInput.addEventListener("keydown", handleEnterKey);
   warrantySelect.addEventListener("keydown", handleEnterKey);
   installmentsInput.addEventListener("keydown", (event) => {
@@ -1149,6 +1149,16 @@ function initializeCalculator() {
       if (inputElement) {
         clearInvalidState(inputElement);
       }
+    });
+
+    additionalProductsEl.addEventListener("focusout", (event) => {
+      const inputElement = event.target.closest(".additional-price");
+
+      if (!inputElement) {
+        return;
+      }
+
+      formatPriceInput(inputElement);
     });
 
     additionalProductsEl.addEventListener("click", (event) => {
